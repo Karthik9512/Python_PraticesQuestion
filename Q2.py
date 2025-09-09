@@ -1,3 +1,13 @@
+# # Simulate OTP Verification System
+
+# -> Say you are building a OTP Verification System
+# -> User will be asked to enter a 4-Digit OTP
+# -> User will be given 3 attempts to enter correct OTP
+# -> When attempts reach beyond 3, Say Maximum Attempts Reached, try after 24 Hours
+# -> If the OTP is correct, say Transaction Success
+# _______________________________________________________________________________________________________________________
+
+
 import random
 
 otp = random.randint(1000,9999)
