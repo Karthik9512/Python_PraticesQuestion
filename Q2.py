@@ -21,6 +21,7 @@ while attempt<max_attempts:
     
     if otp==otp1:
         print("OTP verified")
+        print("Transaction Success")    
         break
     else:     
         attempt+=1
