@@ -96,4 +96,35 @@ admin_contact = {
 
 print('=' * 50)
 print(f" Welcome to {system_info[0]} )")
-print(f" Developed By Students : {admin_contact['Email']}")
+print(f" Developed By Students : {admin_contact[3]}")
+print("=" * 50)
+
+# Student Info : Using Dictionary
+
+students = {}
+
+# Build the menu based system
+
+while True:
+    print("\nMenu:")
+    print("1. Add Student")
+    print("2. Modify Student")
+    print("3. Delete Student")
+    print("4. List All Students")
+    print("5. Exit System")
+
+    choice = input("Enter your choice (1-5): ")     
+
+    if choice == '1':
+        # Adding student
+        student_id = input("Enter Student ID: ")
+        if student_id in students:
+            print("student ID already exists. Please use a unique ID.")
+            continue
+        else:
+            name=input("Enter Student Name: ").title()
+            scores = []
+            while True:
+                score_input= input("Enter Score (or type 'done' to finish): ")
+                if score_input.lower() == 'done':
+                    break
