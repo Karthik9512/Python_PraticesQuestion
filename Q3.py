@@ -128,3 +128,16 @@ while True:
                 score_input= input("Enter Score (or type 'done' to finish): ")
                 if score_input.lower() == 'done':
                     break
+                if score_input.isdigit():
+                    score=int(score_input)
+                    if 0 <= score <= 100:
+                        scores.append(score)
+                    else:
+                        print("Score should be between 0 and 100.")
+                else:
+                    print('Score should be a number only')
+
+                
+
+
+                    
