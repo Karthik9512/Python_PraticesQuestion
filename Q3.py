@@ -96,7 +96,7 @@ admin_contact = {
 
 print('=' * 50)
 print(f" Welcome to {system_info[0]} )")
-print(f" Developed By Students : {admin_contact[3]}")
+print(f" Developed By Students : {system_info[3]} ")
 print("=" * 50)
 
 # Student Info : Using Dictionary
@@ -137,7 +137,40 @@ while True:
                 else:
                     print('Score should be a number only')
 
-                
+                skills = set()
+                if score_input.lower() == 'done':
+                    break
+                skills.add(score_input.title())
 
+                students[student_id] = {
+                    "Name": name,
+                    "Scores": scores,
+                    "Skills": skills
+                }
+                print("Student added successfully.")
 
-                    
+                print(students)
+
+    elif choice == '2':
+        # Modifying student
+
+        student_id= input("Enter Student ID to modify: ")
+        if student_id in students:
+            new_name= input("Enter New Name: ").title()
+            students[student_id]["Name"] = new_name
+
+            print("Student name updated successfully.")
+        else:
+            print("Student Not Found.")
+
+    elif choice == '3':
+        # Deleting student
+        student_id= input("Enter Student ID to delete: ")
+        if student_id in students:
+            deleted_id=students.pop(student_id)
+            print(f"Student with ID {student_id} deleted successfully.")
+        else:
+            print("Student Not Found.")
+    
+    elif choice == '4':
+        # List All Students
