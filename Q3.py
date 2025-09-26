@@ -167,10 +167,54 @@ while True:
         # Deleting student
         student_id= input("Enter Student ID to delete: ")
         if student_id in students:
-            deleted_id=students.pop(student_id)
+            deleted_id=students.pop(student_id) 
             print(f"Student with ID {student_id} deleted successfully.")
         else:
             print("Student Not Found.")
     
     elif choice == '4':
         # List All Students
+        if not students:
+            print("No students found.")
+        else:
+            print("Student Records:")
+            for student_id, info in students.items():
+                name = info["Name"]
+                scores= info["Scores"]
+
+                average_score = sum(scores) / len(scores)
+                highest_score = max(scores) 
+
+                skills= info["Skills"]
+                skills_count = len(skills)
+
+                print( "=========Details of Student============")
+                print(f"\nID: {student_id}")
+                print(f"Name: {name}")
+                print(f"All Scores: {scores}")
+                print(f"Average Score: {average_score:.2f}")
+                print(f"Highest Score: {highest_score}")
+                print(f"All Skills: {', '.join(skills)}")
+                print(f"Count Of Skills: {skills_count}")
+
+
+    elif choice == '5':
+        # Exist System
+        print("Exiting the system...")
+        print("="*50)
+        print(f"Admin Contact Details:")
+        print(f"Admin Phone", admin_contact["Phone"])
+        print(f"Admin Email", admin_contact["Email"])
+        break
+
+    else:
+        print("Invalid choice. Please enter a number between 1 and 5.")
+
+
+
+
+
+
+
+
+                
